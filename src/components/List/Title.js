@@ -9,7 +9,9 @@ const useStyle = makeStyles((theme) => ({
         display: "flex"
     },
     editableTitle: {
-        flexGrow: 1
+        flexGrow: 1,
+        fontSize: "1.2rem",
+        fontWeight: "bold"
     },
     input: {
         margin: theme.spacing(1),
@@ -22,6 +24,7 @@ const useStyle = makeStyles((theme) => ({
 function Title() {
     const classes = useStyle();
     const [open, setOpen] = useState(false);
+    
     return (
         <div>
             {open ? (
@@ -30,6 +33,7 @@ function Title() {
                         inputProps={classes.input}
                         fullWidth
                         onBlur={() => setOpen(!open)}
+                        autoFocus
                     />
                 </div>
             ) : (
